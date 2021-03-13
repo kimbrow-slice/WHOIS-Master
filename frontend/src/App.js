@@ -32,6 +32,7 @@ function App() {
         <h1>WHOIS Lookup</h1>
       </div>
       <div className='whois-container'>
+        {/* Create a form that allows the user to input either a domain or ip address */}
         <form>
         <ListLoading isLoading={appState.loading} whois={appState.data} />
         <br />
@@ -39,10 +40,15 @@ function App() {
         <br />
         <input id="inputValue" type="text" placeholder="IP Address or Domain" name="value" />
         <br />
+        {/* Create a button that will trigger the API to display the data from what was input above */}
        <p><button className="lookupBtn">Lookup some Data</button></p> 
         <br />
         </form>
+        <div className="results">
+          {/* Display the results of the search here */}
+        </div>
       </div>
+
       <footer>
         <div className='footer'>
           Built with React and Node
