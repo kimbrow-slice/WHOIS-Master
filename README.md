@@ -1,6 +1,6 @@
 # WHOIS Lookup
 
-The goal of this project is to create an application that will display IP and Domain information using one or more WHOIS APIs that is comprised of a Frontend built with React and Backend created with Node
+The goal of this project is to create an application that will display IP and Domain information using one or more WHOIS APIs that is comprised of a Frontend built with React and Backend created with Node.
 
 ## MVP
 Frontend completed with React.
