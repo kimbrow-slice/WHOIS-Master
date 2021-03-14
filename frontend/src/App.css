@@ -24,11 +24,14 @@
   color: white;
 }
 
-.lookupBtn {
-  color: #f9690e;
+.submitBtn {
+  color: white;
+  font-size: 20px;
   background-color: #414141;
 }
-
+ul{
+  color:white;
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -36,4 +39,7 @@
   to {
     transform: rotate(360deg);
   }
+}
+p{
+  font-size: 15px;
 }
