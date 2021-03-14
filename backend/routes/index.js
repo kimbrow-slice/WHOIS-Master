@@ -63,7 +63,7 @@ router.get("/whois/:lookup", function (req, res, next) {
        //create a constant that holds the value of the domain name from the response data
       const domainName = response.data.WhoisRecord.domainName;
       //send back a response if the request was successful that has the WHOIS information
-      
+      const ipAdd = response.data.WhoisRecord.ips[0];
       // const nameServers = response.data.WhoisRecord.nameServers.hostNames;
       res.json({ 
         "Domain Name:": domainName,
@@ -99,7 +99,8 @@ router.get("/whois/:lookup", function (req, res, next) {
         "Technical Country Code:": technicalContactcountryCode,
         "Technical Email:": technicalContactEmail,
         "Technical Telephone:": technicalContactTelephone,
-        "Technical Fax:": technicalContactFax
+        "Technical Fax:": technicalContactFax,
+        "IP Address": ipAdd
       })
     })
     .catch(function (error) {

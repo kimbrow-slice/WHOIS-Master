@@ -1,3 +1,4 @@
+  
 import React from "react";
 import axios from "axios";
 
@@ -8,7 +9,7 @@ export default class DataList extends React.Component {
 
   componentDidMount() {
     axios
-      .get("http://localhost:4000/api/whois/jeffkimbrow.com")
+      .get("http://localhost:4000/api/whois/jeffkimbrow.com/")
       .then((res) => {
         let k;
         let newArr = [];
@@ -20,7 +21,7 @@ export default class DataList extends React.Component {
         }
         console.log("end", newArr);
         console.log(typeof newArr)
-        // console.log(typeof res.data);
+        console.log(typeof res.data);
         this.setState({ data: newArr });
        console.log(this.state.data[0].k)
        console.log(this.state.data[1].v)
@@ -47,5 +48,3 @@ export default class DataList extends React.Component {
     );
   }
 }
-
-
