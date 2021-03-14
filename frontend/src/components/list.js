@@ -49,6 +49,3 @@ export default class DataList extends React.Component {
 }
 
 
-//FUCKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
-
-
