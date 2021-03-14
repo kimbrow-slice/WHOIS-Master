@@ -1,8 +1,8 @@
 import React, { Component, useEffect, useState } from 'react';
-import axios from 'axios'
+
 
 import './App.css';
-import List from './components/list';
+import DataList from './components/list.js';
 import withListLoading from './components/withListLoading';
 import Form from './form.js';
 
@@ -24,9 +24,13 @@ class App extends Component {
         <div className="container">
           <h1>WHOIS Lookup Application</h1>
         </div>
+        <h4>Let's find out some information about a specific domain or</h4>
         {/* populate the page with form.js */}
         <Form onSubmit={fields => this.onSubmit(fields)} />
+        {/*The P tag below is where my response will be displayed after I click submit on the form*/}
         <p>{JSON.stringify(this.state.fields, null, 2)}</p>
+        <DataList />
+        <br />
         <footer>
           <div className='footer'>
            Built with React and Node

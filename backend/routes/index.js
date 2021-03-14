@@ -66,7 +66,7 @@ router.get("/whois/:lookup", function (req, res, next) {
       
       const nameServers = response.data.WhoisRecord.nameServers.hostNames;
       res.json({ 
-        "Domain Name": domainName,
+        domain: domainName,
         "Registrant Name": registrantName,
         "Registrant Org": registrantOrg,
         "Registrant Street": registrantStreet,
