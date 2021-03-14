@@ -24,8 +24,9 @@
   color: white;
 }
 
-.lookupBtn {
-  color: #f9690e;
+.submitBtn {
+  color: white;
+  font-size: 20px;
   background-color: #414141;
 }
 

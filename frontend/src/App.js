@@ -9,7 +9,7 @@ import Form from './form.js';
 
 class App extends Component {
   state = {
-    fields: ""
+    fields: "Submit for Results!"
   };
 
 

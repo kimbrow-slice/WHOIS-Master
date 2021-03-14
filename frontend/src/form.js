@@ -26,7 +26,7 @@ export default class Form extends React.Component {
                 <input name="inputValue" placeholder="IP Address or Domain" value={this.state.inputValue} 
                 onChange={ e => this.change(e) }/>
                 <br />
-                <button onClick={e => this.onSubmit(e)}>Submit</button>
+                <button className="submitBtn" onClick={e => this.onSubmit(e)}>Submit</button>
             </form>
         );
     }
