@@ -1,12 +1,12 @@
 var express = require("express");
 var router = express.Router();
-const axios = require("axios");
-const cors = require("cors");
+var axios = require("axios");
+
 
 // const bodyparser = require('body-parser');
 
 router.use(express.json()); //used to parse JSON bodies
-router.use(cors());
+
 /* GET home page. */
 router.get("/", function (req, res, next) {
   res.render("index", { title: "Jeffery" });
@@ -64,43 +64,42 @@ router.get("/whois/:lookup", function (req, res, next) {
       const domainName = response.data.WhoisRecord.domainName;
       //send back a response if the request was successful that has the WHOIS information
       
-      const nameServers = response.data.WhoisRecord.nameServers.hostNames;
+      // const nameServers = response.data.WhoisRecord.nameServers.hostNames;
       res.json({ 
-        domain: domainName,
-        "Registrant Name": registrantName,
-        "Registrant Org": registrantOrg,
-        "Registrant Street": registrantStreet,
-        "Registrant City": registrantCity,
-        "Registrant State": registrantState,
+        "Domain Name:": domainName,
+        "Registrant Name:": registrantName,
+        "Registrant Org:": registrantOrg,
+        "Registrant Street:": registrantStreet,
+        "Registrant City:": registrantCity,
+        "Registrant State:": registrantState,
         "Registrant Postal": registrantPostal,
-        "Registrant Country": registrantCountry,
-        "Registrant countryCode": registrantcountryCode,
-        "Registrant Email": registrantEmail,
-        "Registrant Telephone": registrantTelephone,
-        "Registrant Fax": registrantFax,
-        "Administrative Contact Name": administrativeContactName,
-        "Administrative Org": administrativeContactOrg,
-        "Administrative Street": administrativeContactStreet,
-        "Administrative City": administrativeContactCity,
-        "Administrative State": administrativeContactState,
-        "Administrative Postal": administrativeContactPostal,
-        "Administrative Country": administrativeContactCountry,
-        "Administrative countryCode": administrativeContactcountryCode,
-        "Administrative Email": administrativeContactEmail,
-        "Administrative Telephone": administrativeContactTelephone,
-        "Administrative Fax": administrativeContactFax,
-        "Technical Contact Name": technicalContactName,
-        "Technical Org": technicalContactOrg,
-        "Technical Street": technicalContactStreet,
-        "Technical City": technicalContactCity,
-        "Technical State": technicalContactState,
-        "Technical Postal": technicalContactPostal,
-        "Technical Country": technicalContactCountry,
-        "Technical countryCode": technicalContactcountryCode,
-        "Technical Email": technicalContactEmail,
-        "Technical Telephone": technicalContactTelephone,
-        "Technical Fax": technicalContactFax,
-        "Name Servers": nameServers
+        "Registrant Country:": registrantCountry,
+        "Registrant Country Code:": registrantcountryCode,
+        "Registrant Email:": registrantEmail,
+        "Registrant Telephone:": registrantTelephone,
+        "Registrant Fax:": registrantFax,
+        "Administrative Contact Name:": administrativeContactName,
+        "Administrative Org:": administrativeContactOrg,
+        "Administrative Street:": administrativeContactStreet,
+        "Administrative City:": administrativeContactCity,
+        "Administrative State:": administrativeContactState,
+        "Administrative Postal:": administrativeContactPostal,
+        "Administrative Country:": administrativeContactCountry,
+        "Administrative Country Code:": administrativeContactcountryCode,
+        "Administrative Email:": administrativeContactEmail,
+        "Administrative Telephone:": administrativeContactTelephone,
+        "Administrative Fax:": administrativeContactFax,
+        "Technical Contact Name:": technicalContactName,
+        "Technical Org:": technicalContactOrg,
+        "Technical Street:": technicalContactStreet,
+        "Technical City:": technicalContactCity,
+        "Technical State:": technicalContactState,
+        "Technical Postal:": technicalContactPostal,
+        "Technical Country:": technicalContactCountry,
+        "Technical Country Code:": technicalContactcountryCode,
+        "Technical Email:": technicalContactEmail,
+        "Technical Telephone:": technicalContactTelephone,
+        "Technical Fax:": technicalContactFax
       })
     })
     .catch(function (error) {

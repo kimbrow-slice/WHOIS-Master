@@ -1,9 +1,8 @@
-import React, { Component, useEffect, useState } from 'react';
+import React, { Component } from 'react';
 
 
 import './App.css';
 import DataList from './components/list.js';
-import withListLoading from './components/withListLoading';
 import Form from './form.js';
 
 
@@ -14,7 +13,9 @@ class App extends Component {
 
 
   onSubmit = fields => {
+    //I need to append the input to the url to trigger the API
     console.log('App component got:', fields)
+
     this.setState({ fields });
   };
 
@@ -27,8 +28,7 @@ class App extends Component {
         <h4>Let's find out some information about a specific domain or</h4>
         {/* populate the page with form.js */}
         <Form onSubmit={fields => this.onSubmit(fields)} />
-        {/*The P tag below is where my response will be displayed after I click submit on the form*/}
-        <p>{JSON.stringify(this.state.fields, null, 2)}</p>
+        {/* <p>{JSON.stringify(this.state.fields, null, 2)}</p> */}
         <DataList />
         <br />
         <footer>
