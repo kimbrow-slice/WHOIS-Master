@@ -15,13 +15,15 @@ Deployed using Docker + Heroku.
 
 ## Bugs/yet to be completed
 
-Problem: Attach inputValue from the user inside the JSX form to query when onSubmit is triggered from my button. This then will allow the API to display the data.
+(1) Problem: Attach inputValue from the user inside the JSX form to query when onSubmit is triggered from my button. This then will allow the API to display the data.
+
 Solution: fetch the request on the frontend inside the component?
 
-Problem: Make the API repsond to IP addresses not just Domains.
+(2) Problem: Make the API repsond to IP addresses not just Domains.
+
 Solution: Unsure? Use another WHOIS API?
 
-Problem: Deploy with docker
+(3) Problem: Deploy with docker
 
 Solution: Watch YT video on deploying Heroku/Docker combo once Prod build is completed.
 
