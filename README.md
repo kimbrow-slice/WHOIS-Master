@@ -11,13 +11,7 @@ Display data return by WHOIS API within the UI.
 
 Form for user to submit input.
 
-Deployed using Docker.
-
-## Future Implementions
-Add the IP Geolocation feature from WHOIS API.
-
-Calculate amount of searches done since page was first published live.
-
+Deployed using Docker + Heroku.
 
 ## Bugs/yet to be completed
 
@@ -32,3 +26,11 @@ Solution: Watch YT video on deploying Heroku/Docker combo once Prod build is com
 
 
  
+
+## Future Implementions
+Add the IP Geolocation feature from WHOIS API.
+
+Calculate amount of searches done since page was first published live.
+
+
+
