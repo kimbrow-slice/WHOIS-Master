@@ -22,6 +22,7 @@ Problem: Make the API repsond to IP addresses not just Domains.
 Solution: Unsure? Use another WHOIS API?
 
 Problem: Deploy with docker
+
 Solution: Watch YT video on deploying Heroku/Docker combo once Prod build is completed.
 
 
