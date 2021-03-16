@@ -7,29 +7,10 @@ export default class DataList extends React.Component {
     data: [],
   };
 
-  componentDidMount() {
-    axios
-      .get("http://localhost:4000/api/whois/jeffkimbrow.com/")
-      .then((res) => {
-        let k;
-        let newArr = [];
-        let newFormat = {};
-        for ( k in res.data) {
-          newFormat = { k: k, v: res.data[k] };
-          console.log(k)
-          newArr.push(newFormat);
-        }
-        console.log("end", newArr);
-        console.log(typeof newArr)
-        console.log(typeof res.data);
-        this.setState({ data: newArr });
-       console.log(this.state.data[0].k)
-       console.log(this.state.data[1].v)
-      })
-      .catch(function (err) {
-        console.log(err);
-      });
+  handleDataChange = data => {
+    this.setState({ data })
   }
+
 
   render() {
 

@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 
 import './App.css';
 import DataList from './components/list.js';
-import Form from './form.js';
+import Form from './components/form.js';
 
 
 class App extends Component {
@@ -30,7 +30,7 @@ class App extends Component {
         {/* populate the page with form.js */}
         <Form onSubmit={fields => this.onSubmit(fields)} />
         {/* <p>{JSON.stringify(this.state.fields, null, 2)}</p> */}
-        <DataList />
+        <DataList data={this.state.data} onDataChange={this.handleDataChange}/>
         <br />
         <footer>
           <div className='footer'>
@@ -53,15 +53,7 @@ export default App;
   
 //   });
 
-//   useEffect(() => {
-//     setAppState({ loading: true });
-//     const apiUrl = 'http://localhost:4000/api/whois/';
-//     axios.get(apiUrl).then((lookupData) => {
-//       console.log("hi",lookupData.data)
-//       const ipDomain = lookupData.data;
-//       setAppState({ loading: false, data: ipDomain });
-//     });
-//   }, [setAppState]);
+
 
 
 
