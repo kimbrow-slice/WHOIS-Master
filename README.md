@@ -21,7 +21,7 @@ Solution: still looking into it...
 
 (2) Problem: Make the API repsond to IP addresses not just Domains.
 
-Solution: Unsure? Use another WHOIS API?
+Solution: Unsure? Use another WHOIS API? Edit params of the get from back end?
 
 (3) Problem: Deploy with docker
 
