@@ -15,9 +15,9 @@ Deployed using Docker + Heroku.
 
 ## Bugs/yet to be completed
 
-(1) Problem: Attach inputValue from the user inside the JSX form to query when onSubmit is triggered from my button. This then will allow the API to display the data.
+(1) Problem: Display response into page not just the console.
 
-Solution: fetch the request on the frontend inside the component?
+Solution: still looking into it...
 
 (2) Problem: Make the API repsond to IP addresses not just Domains.
 
