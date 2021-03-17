@@ -18,9 +18,9 @@ export default class DataList extends React.Component {
       // )} */}
       <>
         {this.state.data.map((data) => (
-          <p>
+          <li key={data.id}>
             {data.k} {data.v}
-          </p>
+          </li>
         ))}
       </>
     );

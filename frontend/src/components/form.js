@@ -22,7 +22,7 @@ export default class Form extends React.Component {
         // this.props.onSubmit(this.state.inputValue);
         //at this point this.state is = my userInput
         console.log(this.state.inputValue);
-        console.log("Before Fetch");
+        console.log("Before GET");
         const x = this.state.inputValue;
         axios
         .get(`http://localhost:4000/api/whois/${x}`)
@@ -45,7 +45,7 @@ export default class Form extends React.Component {
         .catch((err) =>{
             console.log(err);
         })
-        console.log("Finished fetch")
+        console.log("Finished GET")
         // this.setState({
         //     inputValue: ''
         // });
