@@ -5,7 +5,8 @@ import axios from 'axios';
 
 export default class Form extends React.Component {
     state = {
-        inputValue: ''
+        inputValue: '',
+        data: []
     }
     change = (e) => {
         this.setState({ 
@@ -40,7 +41,7 @@ export default class Form extends React.Component {
         console.log(typeof resp.data);
         this.setState({ data: newArr });
        console.log(this.state.data[0].k)
-       console.log(this.state.data[1].v)
+       console.log(this.state.data[0].v)
         })
         .catch((err) =>{
             console.log(err);
@@ -62,6 +63,14 @@ export default class Form extends React.Component {
                 <button className="submitBtn" onClick={e => this.onSubmit(e)}>Submit</button>
             </form>
             <br />
+        
+            {this.state.data.map((data) => (
+          <p key={data.id}>
+            {data.k} {data.v}
+          </p>
+        ))}
+  
+    
             
             </>
         );
