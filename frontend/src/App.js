@@ -5,12 +5,10 @@ import DataList from "./components/list.js";
 import Form from "./components/form.js";
 
 class App extends Component {
-  constructor (props) {
+  constructor(props) {
     super(props);
-    this.state = {data: [] }
+    this.state = { data: [] };
   }
-
-
 
   render() {
     return (
@@ -18,7 +16,9 @@ class App extends Component {
         <div className="container">
           <h1>WHOIS Lookup Application</h1>
         </div>
-        <h4>Let's find out some information about a specific domain or</h4>
+        <h4>
+          Let's find out some information about a specific domain or ip address
+        </h4>
         {/* populate the page with form.js */}
         <Form />
         {/* <p>{JSON.stringify(this.state.fields, null, 2)}</p> */}
