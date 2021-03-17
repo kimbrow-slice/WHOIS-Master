@@ -15,15 +15,15 @@ Deployed using Docker + Heroku.
 
 ## Bugs/yet to be completed
 
-(1) Problem: Display response into page not just the console.
 
-Solution: still looking into it...
-
-(2) Problem: Make the API repsond to IP addresses not just Domains.
+(1) Problem: Make the API repsond to IP addresses not just Domains.
 
 Solution: Unsure? Use another WHOIS API? Edit params of the get from back end?
 
-(3) Problem: Deploy with docker
+(1.5) Problem: Refactor my code to clean it up.
+
+
+(2) Problem: Deploy with docker
 
 Solution: Watch YT video on deploying Heroku/Docker combo once Prod build is completed.
 
