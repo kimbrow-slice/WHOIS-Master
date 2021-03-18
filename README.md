@@ -19,6 +19,8 @@ Deployed using Docker + Heroku.
 
 (2) Docker image created needs to be hosted on Heroku still or EC2
 
+(3) Refactor backend
+
 
 ## Future Implementions
 Add the IP Geolocation feature from WHOIS API.
