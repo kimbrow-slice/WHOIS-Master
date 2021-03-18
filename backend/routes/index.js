@@ -20,7 +20,7 @@ router.get("/whois/:lookup", function (req, res, next) {
     )
     .then(function (response) {
       // TODO: refactor for multiple contact types, this will work for MVP
-
+      
       //handle registrant info properly
       const registrantName = response.data.WhoisRecord.registrant.name;
       const registrantOrg = response.data.WhoisRecord.registrant.organization;

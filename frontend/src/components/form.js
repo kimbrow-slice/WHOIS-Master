@@ -31,8 +31,9 @@ export default class Form extends React.Component {
     //rename the current state of inputValue into a variable to shorten the code up
     const x = this.state.inputValue;
     //this is where I use axios to make the call to the backend to then display data
+    console.log(`${encodeURIComponent(`${x}`)}`);
     axios
-      .get(`http://localhost:4000/api/whois/${x}`)
+      .get(`http://localhost:4000/api/whois/${encodeURIComponent(`${x}`)}`)
       .then((resp) => {
         //when the request is successful I want to format the data from a JSON object into an array with key pair values
         let k;
@@ -68,7 +69,7 @@ export default class Form extends React.Component {
           <input
             id="inputForm"
             name="inputValue"
-            placeholder="Domain"
+            placeholder="Domain or IP Address"
             value={this.state.inputValue}
             onChange={(e) => this.change(e)}
           />
@@ -80,7 +81,7 @@ export default class Form extends React.Component {
         <br />
         {/* THIS FINALLY WORKS! WOOOOOOO */}
         {this.state.data.map((data) => (
-          <p key={data.id}>
+          <p >
             {data.k} {data.v}
           </p>
         ))}
