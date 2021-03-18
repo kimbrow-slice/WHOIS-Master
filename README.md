@@ -17,7 +17,7 @@ Deployed using Docker + Heroku.
 
 (1) IP is not a valid input for my API
 
-(2) Docker image created needs to be hosted on Heroku still or EC2
+(2) Docker image created needs to be hosted on Heroku or EC2
 
 (3) Refactor backend
 
