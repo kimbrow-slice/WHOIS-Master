@@ -15,8 +15,9 @@ router.get("/", function (req, res, next) {
 router.get("/whois/:lookup", function (req, res, next) {
   // Make a request for a user to retrieve whois data
   axios
+  //attempting to fix the IP Lookup aspect '&ipWhois=1' 1 results in returning the whois record for the hosting ip if the whois record for the tld of the input domain is not supported
     .get(
-      `https://www.whoisxmlapi.com/whoisserver/WhoisService?apiKey=at_dh5G4ke9pMkIAfMSi32sA5z8F7qpp&domainName=${req.params.lookup}&ip=1&outputFormat=JSON`
+      `https://www.whoisxmlapi.com/whoisserver/WhoisService?apiKey=at_dh5G4ke9pMkIAfMSi32sA5z8F7qpp&domainName=${req.params.lookup}&ipWhois=${req.params.lookup}&ipWhois=1&ip=1&outputFormat=JSON`
     )
     .then(function (response) {
       // TODO: refactor for multiple contact types, this will work for MVP

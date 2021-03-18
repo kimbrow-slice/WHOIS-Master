@@ -41,9 +41,9 @@ export default class Form extends React.Component {
           this.setState({ data: [] });
         } else {
           //when the request is successful I want to format the data from a JSON object into an array with key pair values
-          let k;
-          let newArr = [];
-          let newFormat = {};
+          var k;
+          var newArr = [];
+          var newFormat = {};
           for (k in resp.data) {
             newFormat = { k: k, v: resp.data[k] };
             console.log(k);
