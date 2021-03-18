@@ -35,22 +35,28 @@ export default class Form extends React.Component {
     axios
       .get(`http://localhost:4000/api/whois/${encodeURIComponent(`${x}`)}`)
       .then((resp) => {
-        //when the request is successful I want to format the data from a JSON object into an array with key pair values
-        let k;
-        let newArr = [];
-        let newFormat = {};
-        for (k in resp.data) {
-          newFormat = { k: k, v: resp.data[k] };
-          console.log(k);
-          newArr.push(newFormat);
+        if (resp.data.error) {
+          // has errors
+          // do nothing or reset the state
+          this.setState({ data: [] });
+        } else {
+          //when the request is successful I want to format the data from a JSON object into an array with key pair values
+          let k;
+          let newArr = [];
+          let newFormat = {};
+          for (k in resp.data) {
+            newFormat = { k: k, v: resp.data[k] };
+            console.log(k);
+            newArr.push(newFormat);
+          }
+          console.log("end", newArr);
+          console.log(typeof newArr);
+          console.log(typeof resp.data);
+          //setting state of data to an array from object
+          this.setState({ data: newArr });
+          console.log(this.state.data[0].k);
+          console.log(this.state.data[0].v);
         }
-        console.log("end", newArr);
-        console.log(typeof newArr);
-        console.log(typeof resp.data);
-        //setting state of data to an array from object
-        this.setState({ data: newArr });
-        console.log(this.state.data[0].k);
-        console.log(this.state.data[0].v);
       })
       .catch((err) => {
         console.log(err);
@@ -81,7 +87,7 @@ export default class Form extends React.Component {
         <br />
         {/* THIS FINALLY WORKS! WOOOOOOO */}
         {this.state.data.map((data) => (
-          <p >
+          <p>
             {data.k} {data.v}
           </p>
         ))}
