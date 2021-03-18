@@ -36,6 +36,7 @@ Read documentation about WHOIS API
 (https://whois.whoisxmlapi.com/documentation/making-requests)
 
  Make a project requirments document to be able to accomplish my MVP
+ 
 ( Frontend React, Backend Node server, WHOIS API, User Input on frontend, Data fetched from my API and displayed after user submits input)
 
 ## Saturday: Start working around 8AM
