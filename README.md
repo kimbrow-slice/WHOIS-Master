@@ -59,7 +59,7 @@ Create a WHOIS endpoint with Axios
 
 Backend is created and I can see data when going to the endpoint
 
-(http://localhost:4000/api/whois/jeffkimbrow.com)
+(`http://localhost:4000/api/whois/jeffkimbrow.com`)
 
 Research creating UI with React
 
