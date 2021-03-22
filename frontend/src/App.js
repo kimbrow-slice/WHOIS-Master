@@ -19,9 +19,7 @@ class App extends Component {
         <h4>
           Let's find out some information about a specific domain or ip address
         </h4>
-        {/* populate the page with form.js */}
         <Form />
-        {/* <p>{JSON.stringify(this.state.fields, null, 2)}</p> */}
         <DataList data={this.state.data} onDataChange={this.handleDataChange} />
         <br />
         <footer>

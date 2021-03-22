@@ -1,28 +1,26 @@
-var express = require("express");
-var router = express.Router();
-var axios = require("axios");
+require('dotenv').config();
+const express = require("express");
+const router = express.Router();
+const axios = require("axios");
+const WHOISAPI = 'https://www.whoisxmlapi.com/whoisserver/WhoisService?';
+const apiKey = process.env.apiKey;
 
-// const bodyparser = require('body-parser');
 
-router.use(express.json()); //used to parse JSON bodies
+router.use(express.json()); 
 
-/* GET home page. */
+
 router.get("/", function (req, res, next) {
   res.render("index", { title: "Jeffery" });
 });
 
-/* GET for WHOIS API */
 router.get("/whois/:lookup", function (req, res, next) {
-  // Make a request for a user to retrieve whois data
   axios
   //attempting to fix the IP Lookup aspect '&ipWhois=1' 1 results in returning the whois record for the hosting ip if the whois record for the tld of the input domain is not supported
     .get(
-      `https://www.whoisxmlapi.com/whoisserver/WhoisService?apiKey=at_dh5G4ke9pMkIAfMSi32sA5z8F7qpp&domainName=${req.params.lookup}&ipWhois=${req.params.lookup}&ipWhois=1&ip=1&outputFormat=JSON`
+      `${WHOISAPI}apiKey=${apiKey}&domainName=${req.params.lookup}&ip=1&outputFormat=JSON`
     )
     .then(function (response) {
       // TODO: refactor for multiple contact types, this will work for MVP
-      
-      //handle registrant info properly
       const registrantName = response.data.WhoisRecord.registrant.name;
       const registrantOrg = response.data.WhoisRecord.registrant.organization;
       const registrantStreet = response.data.WhoisRecord.registrant.street1;
@@ -36,8 +34,6 @@ router.get("/whois/:lookup", function (req, res, next) {
       const registrantTelephone =
         response.data.WhoisRecord.registrant.telephone;
       const registrantFax = response.data.WhoisRecord.registrant.fax;
-
-      //handle administrative info properly
       const administrativeContactName =
         response.data.WhoisRecord.administrativeContact.name;
       const administrativeContactOrg =
@@ -60,8 +56,6 @@ router.get("/whois/:lookup", function (req, res, next) {
         response.data.WhoisRecord.administrativeContact.telephone;
       const administrativeContactFax =
         response.data.WhoisRecord.administrativeContact.fax;
-
-      //handle administrative info properly
       const technicalContactName =
         response.data.WhoisRecord.technicalContact.name;
       const technicalContactOrg =
@@ -84,13 +78,11 @@ router.get("/whois/:lookup", function (req, res, next) {
         response.data.WhoisRecord.technicalContact.telephone;
       const technicalContactFax =
         response.data.WhoisRecord.technicalContact.fax;
-
-      //create a constant that holds the value of the domain name from the response data
       const domainName = response.data.WhoisRecord.domainName;
-      //send back a response if the request was successful that has the WHOIS information
       const ipAdd = response.data.WhoisRecord.ips[0];
-      // const nameServers = response.data.WhoisRecord.nameServers.hostNames;
+
       res.json({
+
         "Domain Name:": domainName,
         "Registrant Name:": registrantName,
         "Registrant Org:": registrantOrg,
@@ -129,11 +121,11 @@ router.get("/whois/:lookup", function (req, res, next) {
       });
     })
     .catch(function (error) {
-      // handle error
-      console.log(error);
-      //send back a json object with the error
+
+      console.log(error.message);
+
       res.json({ error: error });
     });
 });
-//request at /api/whois?lookup=
+
 module.exports = router;
